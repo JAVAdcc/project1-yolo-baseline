@@ -1,0 +1,25 @@
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# Local datasets and large generated artifacts
+data/raw/
+data/processed/
+remote_wheels/
+weights/
+
+# Runtime outputs
+runs/
+worklog/*.log
+scripts/__pycache__/
+
+# Keep only curated public artifacts
+artifacts/realtest_yolo11n_e50_gpu3/best.pt
+artifacts/realtest_yolo11n_e50_gpu3/predictions/
+artifacts/realtest_yolo11n_e50_gpu3/predictions_50/

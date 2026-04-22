@@ -1,0 +1,122 @@
+{
+  "weights": "runs/train/full_signal_yolo11n_e50_gpu3/weights/best.pt",
+  "source": "data/processed/yolo_format/images/test",
+  "conf": 0.25,
+  "requested_limit": 10,
+  "actual_count": 10,
+  "class_histogram": {
+    "signal": 15
+  },
+  "zero_detection_images": [
+    "data/processed/yolo_format/images/test/sample_000037.png",
+    "data/processed/yolo_format/images/test/sample_000092.png"
+  ],
+  "images": [
+    {
+      "image": "data/processed/yolo_format/images/test/sample_000013.png",
+      "detections": 2,
+      "labels": [
+        "signal",
+        "signal"
+      ],
+      "confidences": [
+        0.920442,
+        0.755345
+      ]
+    },
+    {
+      "image": "data/processed/yolo_format/images/test/sample_000018.png",
+      "detections": 2,
+      "labels": [
+        "signal",
+        "signal"
+      ],
+      "confidences": [
+        0.949642,
+        0.918476
+      ]
+    },
+    {
+      "image": "data/processed/yolo_format/images/test/sample_000037.png",
+      "detections": 0,
+      "labels": [],
+      "confidences": []
+    },
+    {
+      "image": "data/processed/yolo_format/images/test/sample_000051.png",
+      "detections": 1,
+      "labels": [
+        "signal"
+      ],
+      "confidences": [
+        0.936917
+      ]
+    },
+    {
+      "image": "data/processed/yolo_format/images/test/sample_000055.png",
+      "detections": 1,
+      "labels": [
+        "signal"
+      ],
+      "confidences": [
+        0.322427
+      ]
+    },
+    {
+      "image": "data/processed/yolo_format/images/test/sample_000070.png",
+      "detections": 1,
+      "labels": [
+        "signal"
+      ],
+      "confidences": [
+        0.312519
+      ]
+    },
+    {
+      "image": "data/processed/yolo_format/images/test/sample_000084.png",
+      "detections": 3,
+      "labels": [
+        "signal",
+        "signal",
+        "signal"
+      ],
+      "confidences": [
+        0.902775,
+        0.583763,
+        0.551066
+      ]
+    },
+    {
+      "image": "data/processed/yolo_format/images/test/sample_000087.png",
+      "detections": 3,
+      "labels": [
+        "signal",
+        "signal",
+        "signal"
+      ],
+      "confidences": [
+        0.878064,
+        0.793965,
+        0.785328
+      ]
+    },
+    {
+      "image": "data/processed/yolo_format/images/test/sample_000092.png",
+      "detections": 0,
+      "labels": [],
+      "confidences": []
+    },
+    {
+      "image": "data/processed/yolo_format/images/test/sample_000106.png",
+      "detections": 2,
+      "labels": [
+        "signal",
+        "signal"
+      ],
+      "confidences": [
+        0.432742,
+        0.252657
+      ]
+    }
+  ]
+}

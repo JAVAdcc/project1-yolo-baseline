@@ -1,0 +1,9 @@
+{
+  "device": "cpu",
+  "samples": 16,
+  "warmup_samples": 3,
+  "mean_ms": 26.4626,
+  "median_ms": 26.5749,
+  "min_ms": 25.3583,
+  "max_ms": 27.8847
+}

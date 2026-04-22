@@ -1,0 +1,11 @@
+model: weights/yolo11n.pt
+imgsz: 640
+epochs: 50
+batch: 16
+device: ""
+project: runs/train
+name: yolo11n_spacenet_baseline
+workers: 8
+patience: 20
+cache: false
+rect: false

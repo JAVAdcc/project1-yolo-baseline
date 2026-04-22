@@ -1,0 +1,16 @@
+{
+  "split": "test",
+  "map50": 0.35691756537677927,
+  "map50_95": 0.2321507256340587,
+  "precision": 0.5954107469586145,
+  "recall": 0.32302873484951655,
+  "latency": {
+    "device": "cpu",
+    "samples": 16,
+    "warmup_samples": 3,
+    "mean_ms": 26.4626,
+    "median_ms": 26.5749,
+    "min_ms": 25.3583,
+    "max_ms": 27.8847
+  }
+}
