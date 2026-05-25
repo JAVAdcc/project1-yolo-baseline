@@ -11,6 +11,7 @@ venv/
 # Local datasets and large generated artifacts
 data/raw/
 data/processed/
+hf/
 remote_wheels/
 weights/
 

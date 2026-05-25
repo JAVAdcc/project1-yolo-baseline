@@ -187,3 +187,65 @@ python scripts/export_summary.py \
 - 补充更系统的误差分析，重点关注零检测样本
 - 视结果决定是否补充 `yolo11s` 对比
 - 如课程汇报需要，补测 GPU 推理延迟
+
+## Advanced SpaceNet multi-class baseline
+
+This repository now also includes a completed YOLO11n baseline for the advanced SpaceNet dataset.
+
+Key points:
+
+- Dataset source: `SpaceNet.zip` advanced `.bin/.json` shards.
+- Training data: all 7,500 advanced train samples.
+- Test data: all 2,500 advanced test samples.
+- Classes: 14 signal categories.
+- Boxes use both time bounds and frequency bounds from the JSON labels.
+- Spectrograms are resized to `640 x 640` for bounded disk usage and training I/O.
+
+Main scripts:
+
+```bash
+python scripts/convert_advanced_to_yolo.py \
+  --input-zip /path/to/SpaceNet.zip \
+  --output data/processed/yolo_advanced \
+  --archives train \
+  --reset-output
+
+python scripts/convert_advanced_to_yolo.py \
+  --input-zip /path/to/SpaceNet.zip \
+  --output data/processed/yolo_advanced_test \
+  --archives test.zip \
+  --reset-output \
+  --skip-dataset-yaml-update
+
+python scripts/split_dataset.py \
+  --input data/processed/yolo_advanced \
+  --external-test-input data/processed/yolo_advanced_test \
+  --seed 42 \
+  --reset-splits
+
+python scripts/train_yolo.py \
+  --data configs/dataset.yaml \
+  --model weights/yolo11n.pt \
+  --epochs 50 \
+  --imgsz 640 \
+  --batch 8 \
+  --workers 4 \
+  --device 0 \
+  --name yolo11n_spacenet_advanced_e50
+```
+
+Final advanced test metrics:
+
+| Metric | Value |
+|---|---:|
+| Precision | 0.64590 |
+| Recall | 0.67134 |
+| mAP50 | 0.63589 |
+| mAP50-95 | 0.54298 |
+| GPU latency mean | 17.2154 ms/image |
+
+Detailed report:
+
+- `reports/advanced_yolo_experiment_report.md`
+- `reports/metrics.json`
+- `reports/figures/advanced_predictions/`

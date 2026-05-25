@@ -133,7 +133,7 @@ def update_dataset_yaml(output_dir: Path) -> None:
         return
 
     config = {
-        "path": str(relative_output),
+        "path": relative_output.as_posix(),
         "train": "images/train",
         "val": "images/val",
         "test": "images/test",

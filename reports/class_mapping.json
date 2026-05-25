@@ -1,3 +1,16 @@
 {
-  "signal": 0
+  "WIFI 20MHz QPSK": 0,
+  "WIFI 20MHz 16QAM": 1,
+  "WIFI 20MHz 64QAM": 2,
+  "WIFI 40MHz QPSK": 3,
+  "WIFI 40MHz 16QAM": 4,
+  "WIFI 40MHz 64QAM": 5,
+  "BLE LE1M": 6,
+  "BLE LE2M": 7,
+  "Zigbee": 8,
+  "LoRa 250KHZ": 9,
+  "SRRC QPSK": 10,
+  "SRRC 16QAM": 11,
+  "AM": 12,
+  "FM": 13
 }

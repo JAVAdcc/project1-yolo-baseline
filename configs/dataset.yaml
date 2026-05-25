@@ -1,6 +1,19 @@
-path: data/processed/yolo_format
+path: data/processed/yolo_advanced
 train: images/train
 val: images/val
 test: images/test
 names:
-  0: signal
+  0: WIFI 20MHz QPSK
+  1: WIFI 20MHz 16QAM
+  2: WIFI 20MHz 64QAM
+  3: WIFI 40MHz QPSK
+  4: WIFI 40MHz 16QAM
+  5: WIFI 40MHz 64QAM
+  6: BLE LE1M
+  7: BLE LE2M
+  8: Zigbee
+  9: LoRa 250KHZ
+  10: SRRC QPSK
+  11: SRRC 16QAM
+  12: AM
+  13: FM

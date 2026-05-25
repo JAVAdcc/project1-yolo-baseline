@@ -1,0 +1,172 @@
+[
+  {
+    "source": "data\\processed\\yolo_advanced\\images\\test\\test_0.png",
+    "output": "reports\\figures\\advanced_predictions\\test_0_gt_pred.png",
+    "ground_truth_boxes": 6,
+    "predicted_boxes": 6,
+    "predicted_classes": [
+      "Zigbee",
+      "BLE LE2M",
+      "LoRa 250KHZ",
+      "SRRC QPSK",
+      "WIFI 40MHz QPSK",
+      "WIFI 40MHz 16QAM"
+    ],
+    "confidences": [
+      0.9571,
+      0.9332,
+      0.8307,
+      0.7905,
+      0.57,
+      0.3653
+    ]
+  },
+  {
+    "source": "data\\processed\\yolo_advanced\\images\\test\\test_1.png",
+    "output": "reports\\figures\\advanced_predictions\\test_1_gt_pred.png",
+    "ground_truth_boxes": 10,
+    "predicted_boxes": 6,
+    "predicted_classes": [
+      "WIFI 20MHz 64QAM",
+      "BLE LE1M",
+      "BLE LE2M",
+      "SRRC QPSK",
+      "WIFI 20MHz 16QAM",
+      "SRRC 16QAM"
+    ],
+    "confidences": [
+      0.9599,
+      0.8921,
+      0.7981,
+      0.5536,
+      0.4413,
+      0.4364
+    ]
+  },
+  {
+    "source": "data\\processed\\yolo_advanced\\images\\test\\test_10.png",
+    "output": "reports\\figures\\advanced_predictions\\test_10_gt_pred.png",
+    "ground_truth_boxes": 8,
+    "predicted_boxes": 10,
+    "predicted_classes": [
+      "Zigbee",
+      "BLE LE2M",
+      "Zigbee",
+      "BLE LE2M",
+      "AM",
+      "WIFI 20MHz 16QAM",
+      "WIFI 40MHz 16QAM",
+      "WIFI 20MHz 16QAM",
+      "WIFI 40MHz 64QAM",
+      "AM"
+    ],
+    "confidences": [
+      0.9685,
+      0.9488,
+      0.9434,
+      0.915,
+      0.8011,
+      0.6618,
+      0.4023,
+      0.3051,
+      0.299,
+      0.2547
+    ]
+  },
+  {
+    "source": "data\\processed\\yolo_advanced\\images\\test\\test_100.png",
+    "output": "reports\\figures\\advanced_predictions\\test_100_gt_pred.png",
+    "ground_truth_boxes": 6,
+    "predicted_boxes": 4,
+    "predicted_classes": [
+      "WIFI 20MHz QPSK",
+      "WIFI 20MHz 16QAM",
+      "WIFI 20MHz QPSK",
+      "WIFI 20MHz 16QAM"
+    ],
+    "confidences": [
+      0.6439,
+      0.5462,
+      0.4305,
+      0.3913
+    ]
+  },
+  {
+    "source": "data\\processed\\yolo_advanced\\images\\test\\test_1000.png",
+    "output": "reports\\figures\\advanced_predictions\\test_1000_gt_pred.png",
+    "ground_truth_boxes": 6,
+    "predicted_boxes": 3,
+    "predicted_classes": [
+      "Zigbee",
+      "BLE LE1M",
+      "Zigbee"
+    ],
+    "confidences": [
+      0.9626,
+      0.9378,
+      0.8681
+    ]
+  },
+  {
+    "source": "data\\processed\\yolo_advanced\\images\\test\\test_1001.png",
+    "output": "reports\\figures\\advanced_predictions\\test_1001_gt_pred.png",
+    "ground_truth_boxes": 6,
+    "predicted_boxes": 3,
+    "predicted_classes": [
+      "Zigbee",
+      "BLE LE2M",
+      "BLE LE2M"
+    ],
+    "confidences": [
+      0.9527,
+      0.9171,
+      0.9002
+    ]
+  },
+  {
+    "source": "data\\processed\\yolo_advanced\\images\\test\\test_1002.png",
+    "output": "reports\\figures\\advanced_predictions\\test_1002_gt_pred.png",
+    "ground_truth_boxes": 10,
+    "predicted_boxes": 7,
+    "predicted_classes": [
+      "Zigbee",
+      "Zigbee",
+      "Zigbee",
+      "BLE LE2M",
+      "Zigbee",
+      "SRRC QPSK",
+      "SRRC 16QAM"
+    ],
+    "confidences": [
+      0.9467,
+      0.9173,
+      0.9133,
+      0.8847,
+      0.6596,
+      0.5431,
+      0.3716
+    ]
+  },
+  {
+    "source": "data\\processed\\yolo_advanced\\images\\test\\test_1003.png",
+    "output": "reports\\figures\\advanced_predictions\\test_1003_gt_pred.png",
+    "ground_truth_boxes": 10,
+    "predicted_boxes": 6,
+    "predicted_classes": [
+      "Zigbee",
+      "BLE LE2M",
+      "WIFI 40MHz 64QAM",
+      "SRRC QPSK",
+      "SRRC QPSK",
+      "SRRC 16QAM"
+    ],
+    "confidences": [
+      0.9306,
+      0.9264,
+      0.5507,
+      0.5313,
+      0.4756,
+      0.4064
+    ]
+  }
+]

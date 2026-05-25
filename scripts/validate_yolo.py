@@ -77,6 +77,44 @@ def benchmark_inference(weights_path: Path, image_paths: list[Path], device: str
     }
 
 
+def to_float_or_none(value) -> float | None:
+    try:
+        return float(value)
+    except (TypeError, ValueError):
+        return None
+
+
+def extract_per_class_metrics(model, metrics) -> dict:
+    names = getattr(model, "names", {}) or {}
+    if isinstance(names, list):
+        names = {index: name for index, name in enumerate(names)}
+
+    box = metrics.box
+    class_indices = list(range(len(names)))
+    ap_class_index = getattr(box, "ap_class_index", None)
+    if ap_class_index is not None:
+        class_indices = [int(index) for index in ap_class_index]
+
+    arrays = {
+        "precision": getattr(box, "p", None),
+        "recall": getattr(box, "r", None),
+        "map50": getattr(box, "ap50", None),
+        "map50_95": getattr(box, "maps", None),
+    }
+
+    per_class = {}
+    for position, class_id in enumerate(class_indices):
+        class_name = names.get(class_id, str(class_id))
+        item = {}
+        for key, values in arrays.items():
+            if values is None or position >= len(values):
+                item[key] = None
+            else:
+                item[key] = to_float_or_none(values[position])
+        per_class[class_name] = item
+    return per_class
+
+
 def main() -> None:
     args = parse_args()
     setup_logging()
@@ -99,6 +137,7 @@ def main() -> None:
         "map50_95": float(metrics.box.map),
         "precision": float(metrics.box.mp),
         "recall": float(metrics.box.mr),
+        "per_class": extract_per_class_metrics(model, metrics),
         "latency": latency,
     }
 

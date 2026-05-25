@@ -93,7 +93,7 @@ def is_oom_error(exc: Exception) -> bool:
 
 def candidate_batches(requested_batch: int) -> list[int]:
     candidates: list[int] = []
-    for batch in [requested_batch, 8]:
+    for batch in [requested_batch, 8, 4, 2, 1]:
         if batch > 0 and batch not in candidates:
             candidates.append(batch)
     return candidates
@@ -113,6 +113,8 @@ def main() -> None:
     val_dir = data_root / data_cfg["val"]
     train_count = count_files(train_dir, IMAGE_SUFFIXES)
     val_count = count_files(val_dir, IMAGE_SUFFIXES)
+
+    project_dir = str(Path(args.project).resolve())
 
     logging.info("Using model: %s", model_path)
     logging.info("Dataset root: %s", data_root)
@@ -136,7 +138,7 @@ def main() -> None:
                 imgsz=args.imgsz,
                 batch=batch_size,
                 device=args.device or None,
-                project=args.project,
+                project=project_dir,
                 name=args.name,
                 workers=args.workers,
                 patience=args.patience,
