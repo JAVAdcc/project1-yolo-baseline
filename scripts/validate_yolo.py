@@ -115,6 +115,30 @@ def extract_per_class_metrics(model, metrics) -> dict:
     return per_class
 
 
+def iou_from_precision_recall(precision: float | None, recall: float | None) -> float | None:
+    if precision is None or recall is None:
+        return None
+    denominator = precision + recall - precision * recall
+    if denominator <= 0:
+        return None
+    return precision * recall / denominator
+
+
+def add_iou_metrics(output: dict) -> None:
+    output["real_test_precision"] = output["precision"]
+    output["iou_from_precision_recall"] = iou_from_precision_recall(
+        output["precision"],
+        output["recall"],
+    )
+
+    per_class_ious = []
+    for item in output.get("per_class", {}).values():
+        item["iou"] = iou_from_precision_recall(item.get("precision"), item.get("recall"))
+        if item["iou"] is not None:
+            per_class_ious.append(item["iou"])
+    output["macro_iou"] = sum(per_class_ious) / len(per_class_ious) if per_class_ious else None
+
+
 def main() -> None:
     args = parse_args()
     setup_logging()
@@ -140,6 +164,7 @@ def main() -> None:
         "per_class": extract_per_class_metrics(model, metrics),
         "latency": latency,
     }
+    add_iou_metrics(output)
 
     write_json(Path("reports/metrics.json"), output)
     write_json(Path("reports/latency.json"), latency)
@@ -151,6 +176,8 @@ def main() -> None:
             f"mAP50-95: {output['map50_95']:.6f}",
             f"Precision: {output['precision']:.6f}",
             f"Recall: {output['recall']:.6f}",
+            f"Macro IoU: {output['macro_iou']:.6f}" if output["macro_iou"] is not None else "Macro IoU: unavailable",
+            f"Real-test precision: {output['real_test_precision']:.6f}",
             f"Latency benchmark device: {latency.get('device', 'unavailable')}",
             f"Latency mean (ms): {latency.get('mean_ms', 'unavailable')}",
             f"Latency median (ms): {latency.get('median_ms', 'unavailable')}",

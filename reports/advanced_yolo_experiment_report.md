@@ -227,6 +227,10 @@ Overall test metrics:
 | Recall | 0.67134 |
 | mAP50 | 0.63589 |
 | mAP50-95 | 0.54298 |
+| Macro IoU | 0.48185 |
+| real-test precision | 0.64590 |
+
+Macro IoU is computed from per-class precision and recall using `IoU = TP / (TP + FP + FN) = P * R / (P + R - P * R)`, then averaged over the 14 classes.
 
 Latency benchmark:
 

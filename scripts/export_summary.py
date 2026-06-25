@@ -63,6 +63,8 @@ def main() -> None:
         f"mAP50-95: {metrics.get('map50_95', 'unavailable')}",
         f"Precision: {metrics.get('precision', 'unavailable')}",
         f"Recall: {metrics.get('recall', 'unavailable')}",
+        f"Macro IoU: {metrics.get('macro_iou', 'unavailable')}",
+        f"Real-test precision: {metrics.get('real_test_precision', metrics.get('precision', 'unavailable'))}",
         f"Latency available: {bool(latency)}",
         f"Latency mean (ms): {latency.get('mean_ms', 'unavailable')}",
         f"Latency median (ms): {latency.get('median_ms', 'unavailable')}",

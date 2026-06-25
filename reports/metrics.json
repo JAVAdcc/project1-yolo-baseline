@@ -4,6 +4,9 @@
   "map50_95": 0.5429824939918118,
   "precision": 0.6459013548405617,
   "recall": 0.6713364396069006,
+  "real_test_precision": 0.6459013548405617,
+  "iou_from_precision_recall": 0.4907276690341178,
+  "macro_iou": 0.48184782615736194,
   "per_class": {
     "WIFI 20MHz QPSK": {
       "precision": 0.47371251900501066,

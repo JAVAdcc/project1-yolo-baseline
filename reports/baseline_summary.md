@@ -164,6 +164,8 @@
 - mAP50-95: 0.542982
 - Precision: 0.645901
 - Recall: 0.671336
+- Macro IoU: 0.481848
+- Real-test precision: 0.645901
 - Latency benchmark device: 0
 - Latency mean (ms): 15.2081
 - Latency median (ms): 14.7428
@@ -175,6 +177,8 @@
 - mAP50-95: 0.542982
 - Precision: 0.645901
 - Recall: 0.671336
+- Macro IoU: 0.481848
+- Real-test precision: 0.645901
 - Latency benchmark device: 0
 - Latency mean (ms): 17.2154
 - Latency median (ms): 16.8399
@@ -188,6 +192,8 @@
 - mAP50-95: 0.5429824939918118
 - Precision: 0.6459013548405617
 - Recall: 0.6713364396069006
+- Macro IoU: 0.48184782615736194
+- Real-test precision: 0.6459013548405617
 - Latency available: True
 - Latency mean (ms): 17.2154
 - Latency median (ms): 16.8399
